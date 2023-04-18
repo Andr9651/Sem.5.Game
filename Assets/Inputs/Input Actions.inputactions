@@ -1,0 +1,54 @@
+{
+    "name": "Input Actions",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "526de7dd-1df0-44e9-a362-980311b4e77e",
+            "actions": [
+                {
+                    "name": "RightWheel",
+                    "type": "Value",
+                    "id": "84654f5d-a0d3-431b-a7c8-5c597ddb7752",
+                    "expectedControlType": "Axis",
+                    "processors": "AxisDeadzone",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftWheel",
+                    "type": "Value",
+                    "id": "fdc07fc3-e316-4f5b-8592-ed37b4d450bf",
+                    "expectedControlType": "Axis",
+                    "processors": "AxisDeadzone",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "aa615e45-6fd1-4edc-820f-0ba1941e86e7",
+                    "path": "<Gamepad>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e3bc160-0b1d-402c-9e74-bbeb6bf97cdf",
+                    "path": "<Gamepad>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
