@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "84654f5d-a0d3-431b-a7c8-5c597ddb7752",
                     "expectedControlType": "Axis",
-                    "processors": "AxisDeadzone",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "fdc07fc3-e316-4f5b-8592-ed37b4d450bf",
                     "expectedControlType": "Axis",
-                    "processors": "AxisDeadzone",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 }
@@ -38,6 +38,50 @@
                 },
                 {
                     "name": "",
+                    "id": "0bb0539f-482f-48bf-9ff2-e872b69216ec",
+                    "path": "<Joystick>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "W & S",
+                    "id": "b4c95b42-bac7-41d7-8c58-74b267678847",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "4179eab7-dfb6-4c92-978f-701d227981af",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "21e496ff-41ae-46bc-8311-ea23a92c02eb",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
                     "id": "8e3bc160-0b1d-402c-9e74-bbeb6bf97cdf",
                     "path": "<Gamepad>/leftStick/y",
                     "interactions": "",
@@ -46,9 +90,65 @@
                     "action": "LeftWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3ab58f1-8b22-491c-93dc-d6fc27ed895f",
+                    "path": "<Joystick>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up & Down",
+                    "id": "09f2f6cb-c3ef-4c78-bda7-24c57773a1ea",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c01c7850-7cad-46df-a2c3-981a6453d2ce",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "f6778cd9-bf98-4a99-b122-830b3b04bc58",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<HID>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
