@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public float _raceTime { get; private set; }
+    [field:SerializeField] public float RaceTime { get; private set; }
 
     public void SetRaceTime(float raceTime)
     {
-        SetRaceTime(raceTime);
+        this.RaceTime = raceTime;
     }
 }

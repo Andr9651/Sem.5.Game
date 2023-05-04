@@ -6,13 +6,15 @@ public class CheckpointManager : MonoBehaviour
     private List<ICheckpoint> _checkpoints;
     private HashSet<int> _triggeredCheckpoints;
     private ScoreManager _scoreManager;
-
+    private PlayerDataManager _playerDataManager;
+    
     // Start is called before the first frame update
     void Start()
     {
         _checkpoints = new List<ICheckpoint>(FindObjectsOfType<Checkpoint>());
         _triggeredCheckpoints = new HashSet<int>();
         _scoreManager = FindObjectOfType<ScoreManager>();
+        _playerDataManager = FindObjectOfType<PlayerDataManager>();
 
         for (int i = 0; i < _checkpoints.Count; i++)
         {
@@ -54,6 +56,7 @@ public class CheckpointManager : MonoBehaviour
         if (_triggeredCheckpoints.Count != _checkpoints.Count) return;
         _scoreManager.StopTimer();
         _triggeredCheckpoints.Clear();
+        _playerDataManager.SavePlayerData();
         print("Doners, your time is: " + _scoreManager.GetRaceTime());
     }
 }
