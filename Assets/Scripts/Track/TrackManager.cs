@@ -1,20 +1,28 @@
+using System;
 using System.Collections.Generic;
+using Sem5.EventBus;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class CheckpointManager : MonoBehaviour
+public class TrackManager : MonoBehaviour
 {
     private List<ICheckpoint> _checkpoints;
-    private HashSet<int> _triggeredCheckpoints;
-    private ScoreManager _scoreManager;
-    private PlayerDataManager _playerDataManager;
+    [FormerlySerializedAs("_lapCount")] [SerializeField] private int _playerLapCount;
+    [SerializeField] private int _trackLapCount;
     
+    private HashSet<int> _triggeredCheckpoints;
+    private EventBus _eventBus;
+
+    private void Awake()
+    {
+        _eventBus = EventBus.Instance;
+    }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _checkpoints = new List<ICheckpoint>(FindObjectsOfType<Checkpoint>());
         _triggeredCheckpoints = new HashSet<int>();
-        _scoreManager = FindObjectOfType<ScoreManager>();
-        _playerDataManager = FindObjectOfType<PlayerDataManager>();
 
         for (int i = 0; i < _checkpoints.Count; i++)
         {
@@ -45,18 +53,19 @@ public class CheckpointManager : MonoBehaviour
     private void OnTriggerStartHandler(int id)
     {
         if (!_triggeredCheckpoints.Add(id)) return;
-        _scoreManager.StartTimer();
+        _eventBus.InvokeOnStartRace();
         print("Ok, let's go!");
     }
 
     private void OnTriggerGoalHandler(int id)
     {
         _triggeredCheckpoints.Add(id);
-
+        
         if (_triggeredCheckpoints.Count != _checkpoints.Count) return;
-        _scoreManager.StopTimer();
+        _playerLapCount++;
         _triggeredCheckpoints.Clear();
-        _playerDataManager.SavePlayerData();
-        print("Doners, your time is: " + _scoreManager.GetRaceTime());
+
+        if (_playerLapCount < _trackLapCount) return;
+        _eventBus.InvokeOnFinishRace();
     }
 }
