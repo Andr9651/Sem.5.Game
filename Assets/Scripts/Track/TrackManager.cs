@@ -7,11 +7,14 @@ using UnityEngine.Serialization;
 public class TrackManager : MonoBehaviour
 {
     private List<ICheckpoint> _checkpoints;
-    [FormerlySerializedAs("_lapCount")] [SerializeField] private int _playerLapCount;
-    [SerializeField] private int _trackLapCount;
-    
+    [SerializeField] private int _playerLapCount;
+
+    [SerializeField] private TrackData _trackData;
     private HashSet<int> _triggeredCheckpoints;
     private EventBus _eventBus;
+    private float _startTime;
+    private float _endTime;
+
 
     private void Awake()
     {
@@ -52,20 +55,33 @@ public class TrackManager : MonoBehaviour
 
     private void OnTriggerStartHandler(int id)
     {
-        if (!_triggeredCheckpoints.Add(id)) return;
-        _eventBus.InvokeOnStartRace();
+        if (!_triggeredCheckpoints.Add(id) || _playerLapCount != 0 ) return;
+        StartTimer();
         print("Ok, let's go!");
     }
 
     private void OnTriggerGoalHandler(int id)
     {
         _triggeredCheckpoints.Add(id);
-        
+
         if (_triggeredCheckpoints.Count != _checkpoints.Count) return;
         _playerLapCount++;
         _triggeredCheckpoints.Clear();
 
-        if (_playerLapCount < _trackLapCount) return;
-        _eventBus.InvokeOnFinishRace();
+        if (_playerLapCount < _trackData.LapCount) return;
+        StopTimer();
+    }
+
+    private void StartTimer()
+    {
+        _startTime = Time.time;
+    }
+
+    private void StopTimer()
+    {
+        _endTime = Time.time;
+
+        float raceTime = _endTime - _startTime;
+        print(raceTime);
     }
 }
