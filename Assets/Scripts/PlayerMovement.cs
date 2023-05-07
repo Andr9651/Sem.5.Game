@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private WheelCollider _leftWheel;
-    [SerializeField] private WheelCollider _rightWheel;
+    [SerializeField] private WheelCollider _leftWheelCollider;
+    [SerializeField] private WheelCollider _rightWheelCollider;
+    [SerializeField] private Transform _leftWheel;
+    [SerializeField] private Transform _rightWheel;
 
     private float _leftWheelInput;
     private float _rightWheelInput;
@@ -23,15 +26,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 pos;
+        Quaternion rotation;
+        
+        _leftWheelCollider.GetWorldPose(out pos, out rotation);
+        _leftWheel.SetPositionAndRotation(pos,rotation);
+        
+        _rightWheelCollider.GetWorldPose(out pos, out rotation);
+        _rightWheel.SetPositionAndRotation(pos,rotation);
     }
 
     private void FixedUpdate()
     {
         _rigidbody.WakeUp();
         
-        _leftWheel.rotationSpeed = 720 * _leftWheelInput;
-        _rightWheel.rotationSpeed = 720 * _rightWheelInput;
+        _leftWheelCollider.rotationSpeed = 720 * _leftWheelInput;
+        _rightWheelCollider.rotationSpeed = 720 * _rightWheelInput;
     }
 
     void OnLeftWheel(InputValue inputValue)
