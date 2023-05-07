@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightWheel",
+                    "action": "LeftWheel",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -65,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightWheel",
+                    "action": "LeftWheel",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -76,7 +76,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightWheel",
+                    "action": "LeftWheel",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -109,7 +109,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftWheel",
+                    "action": "RightWheel",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -120,7 +120,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftWheel",
+                    "action": "RightWheel",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -131,7 +131,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftWheel",
+                    "action": "RightWheel",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
