@@ -1,9 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using System.IO;
+using UnityEngine;
+using NaughtyAttributes;
 
-public abstract class SaveDataManagerBase: ScriptableObject
+[CreateAssetMenu]
+public class SaveDataManagerBase: ScriptableObject
 {
-    public bool SavePLayerTrackData()
+    public PlayerTrackTime playerTrackTime;
+    [Button()]
+    public bool SavePlayerTrackData()
     {
-        return false;
+        string json = JsonUtility.ToJson(playerTrackTime, true);
+        string playerDataPath = Path.Combine(Application.persistentDataPath, "playerData.txt");
+        
+        try
+        {        
+            File.WriteAllText(playerDataPath, json);
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+            return false;
+        }
+        
+        return true;
     }
 }
