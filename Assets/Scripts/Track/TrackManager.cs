@@ -10,6 +10,7 @@ public class TrackManager : MonoBehaviour
     [SerializeField] private int _playerLapCount;
     [SerializeField] private PlayerTrackTime _playerTrackTime;
     [SerializeField] private TrackData _trackData;
+    [SerializeReference][SerializeField] private ICheckpoint _checkpoint;
     
     private HashSet<int> _triggeredCheckpoints;
     private EventBus _eventBus;
