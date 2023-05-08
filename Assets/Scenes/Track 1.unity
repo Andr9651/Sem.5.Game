@@ -781,6 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerLapCount: 0
+  _playerTrackTime: {fileID: 11400000, guid: ee1e235a142da7c46815d812fcfc4453, type: 2}
   _trackData: {fileID: 11400000, guid: f92afd49fc301114fb23192078d3a6a8, type: 2}
 --- !u!4 &1541221330
 Transform:
