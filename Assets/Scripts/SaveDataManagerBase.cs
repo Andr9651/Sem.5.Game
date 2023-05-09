@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
-using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine;
 
 [CreateAssetMenu]
 public class SaveDataManagerBase: ScriptableObject
 {
     public PlayerTrackTime playerTrackTime;
-    [Button()]
+    [Button]
     public bool SavePlayerTrackData()
     {
         string json = JsonUtility.ToJson(playerTrackTime, true);

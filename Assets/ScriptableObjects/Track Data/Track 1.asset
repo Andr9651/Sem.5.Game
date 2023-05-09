@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Track 1
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Lovely Stroll
-  LapCount: 2
+  LapCount: 1
   AuthorTime: 15
