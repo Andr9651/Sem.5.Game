@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 [CreateAssetMenu]
 public class LeaderboardData : ScriptableObject
 {
-	public List<LeaderboardScore> _leaderboard;
+	[FormerlySerializedAs("_leaderboard")] public List<LeaderboardScore> Leaderboard;
 }
 
 [Serializable]

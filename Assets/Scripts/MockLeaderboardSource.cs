@@ -12,7 +12,7 @@ public class MockLeaderboardSource : LeaderboardSourceBase
 	public override IEnumerator GetLeaderboard(Action callback)
 	{
 		yield return new WaitForSeconds(1f);
-		LeaderboardData._leaderboard = scores.ConvertAll<LeaderboardScore>((mockScore) =>
+		LeaderboardData.Leaderboard = scores.ConvertAll<LeaderboardScore>((mockScore) =>
 			{
 				var score = new LeaderboardScore();
 				score.PlayerName = mockScore.name;
