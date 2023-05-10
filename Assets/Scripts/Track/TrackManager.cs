@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Sem5.EventBus;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,16 +12,9 @@ public class TrackManager : MonoBehaviour
     [SerializeField]private UnityEvent OnTrackFinish;
 
     private HashSet<int> _triggeredCheckpoints;
-    private EventBus _eventBus;
     private float _startTime;
     private float _endTime;
-
-
-    private void Awake()
-    {
-        _eventBus = EventBus.Instance;
-    }
-
+    
     // Start is called before the first frame update
     private void Start()
     {
