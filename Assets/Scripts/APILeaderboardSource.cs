@@ -23,12 +23,10 @@ public class APILeaderboardSource : LeaderboardSourceBase
 				Debug.LogError(request.error);
 				yield break;
 			}
-			
+
 			string json = request.downloadHandler.text;
-			List<PlayerTrackTime> leaderboard = JsonUtility.FromJson<List<PlayerTrackTime>>(json);
-			
 			LeaderboardData ??= CreateInstance<LeaderboardData>();
-			LeaderboardData._leaderboard = leaderboard;
+			JsonUtility.FromJsonOverwrite(json, LeaderboardData);
 		}
 
 		callback?.Invoke();

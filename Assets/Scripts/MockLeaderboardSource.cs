@@ -12,16 +12,17 @@ public class MockLeaderboardSource : LeaderboardSourceBase
 	public override IEnumerator GetLeaderboard(Action callback)
 	{
 		yield return new WaitForSeconds(1f);
-		LeaderboardData._leaderboard = scores.ConvertAll<PlayerTrackTime>((mockScore) =>
-		{
-			var a = CreateInstance<PlayerTrackTime>();
-			a.PlayerName = mockScore.name;
-			a.Time = mockScore.time;
-			a.TrackName = mockScore.track;
-			return a;
-		}).OrderBy((_playerTrackTime) => _playerTrackTime.Time)
+		LeaderboardData._leaderboard = scores.ConvertAll<LeaderboardScore>((mockScore) =>
+			{
+				var score = new LeaderboardScore();
+				score.PlayerName = mockScore.name;
+				score.Time = mockScore.time;
+				score.TrackName = mockScore.track;
+				return score;
+			})
+			.OrderBy((leaderboardScore) => leaderboardScore.Time)
 			.ToList();
-		
+
 		callback?.Invoke();
 	}
 

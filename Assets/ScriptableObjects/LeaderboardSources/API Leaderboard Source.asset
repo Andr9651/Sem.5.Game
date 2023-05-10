@@ -9,18 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f325a5e4b03e4a2aa94fe28afda7389a, type: 3}
-  m_Name: Mock Leaderboard Source
+  m_Script: {fileID: 11500000, guid: f3dfb9d6b4ff4cf2af356cf51254ac6d, type: 3}
+  m_Name: API Leaderboard Source
   m_EditorClassIdentifier: 
   _playerTrackTime: {fileID: 0}
   <LeaderboardData>k__BackingField: {fileID: 11400000, guid: 83911b03b32c15240a72ec3a831926e6, type: 2}
-  scores:
-  - time: 124.12343
-    name: awdoi
-    track: oieejf
-  - time: 1234.234
-    name: sfsefsf
-    track: 4grge4w
-  - time: 93.12123
-    name: 6y4te
-    track: 4grge4g34fw
+  _leaderboardUri: 

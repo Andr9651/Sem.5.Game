@@ -27,7 +27,7 @@ public class LeaderboardManager : MonoBehaviour
 		
 		for (int i = 0; i < _leaderboardSource.LeaderboardData._leaderboard.Count; i++)
 		{
-			PlayerTrackTime score = _leaderboardSource.LeaderboardData._leaderboard[i];
+			LeaderboardScore score = _leaderboardSource.LeaderboardData._leaderboard[i];
 			LeaderboardElement element = Instantiate(_scoreListElement, _scoreListContainer.transform);
 			
 			element.SetText(i+1, score.PlayerName, score.Time);
