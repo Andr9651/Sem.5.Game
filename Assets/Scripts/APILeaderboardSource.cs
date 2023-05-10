@@ -25,8 +25,10 @@ public class APILeaderboardSource : LeaderboardSourceBase
 			}
 			
 			string json = request.downloadHandler.text;
+			List<PlayerTrackTime> leaderboard = JsonUtility.FromJson<List<PlayerTrackTime>>(json);
+			
 			LeaderboardData ??= CreateInstance<LeaderboardData>();
-			JsonUtility.FromJsonOverwrite(json, LeaderboardData);
+			LeaderboardData._leaderboard = leaderboard;
 		}
 
 		callback?.Invoke();
