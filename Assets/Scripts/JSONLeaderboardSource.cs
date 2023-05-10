@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu]
-class JSONLeaderboardSource : LeaderboardSourceBase
+public class JsonLeaderboardSource : LeaderboardSourceBase
 {
 	[Multiline(lines:20)]
 	public string Json;
@@ -13,7 +14,9 @@ class JSONLeaderboardSource : LeaderboardSourceBase
 	{
 		
 		LeaderboardData ??= CreateInstance<LeaderboardData>();
-		JsonUtility.FromJsonOverwrite(Json, LeaderboardData);
+		LeaderboardScore[] scores = JsonUtilityHelpers.FromJsonArray<LeaderboardScore>(Json);
+
+		LeaderboardData._leaderboard = scores.ToList();
 		
 		callback?.Invoke();
 		yield break;

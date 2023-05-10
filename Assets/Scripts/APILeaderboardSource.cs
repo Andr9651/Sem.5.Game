@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
@@ -25,8 +26,10 @@ public class APILeaderboardSource : LeaderboardSourceBase
 			}
 
 			string json = request.downloadHandler.text;
+			LeaderboardScore[] scores = JsonUtilityHelpers.FromJsonArray<LeaderboardScore>(json);
+			
 			LeaderboardData ??= CreateInstance<LeaderboardData>();
-			JsonUtility.FromJsonOverwrite(json, LeaderboardData);
+			LeaderboardData._leaderboard = scores.ToList();
 		}
 
 		callback?.Invoke();
