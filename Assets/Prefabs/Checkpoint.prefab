@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1157036170274699907}
   - component: {fileID: 1685807564115103107}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Left Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 3073328861108621560}
   - component: {fileID: 3380325099892115785}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Right Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 8809221151123024422}
   - component: {fileID: 5235264315320160627}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,3 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f6873f65f5a617eaa407b74fc82b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 6
+  leftPole: {fileID: 3200086950792856688}
+  rightPole: {fileID: 4693609698130643939}
+  topPart: {fileID: 235832417787218406}
