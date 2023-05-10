@@ -16,7 +16,7 @@ public class JsonLeaderboardSource : LeaderboardSourceBase
 		LeaderboardData ??= CreateInstance<LeaderboardData>();
 		LeaderboardScore[] scores = JsonUtilityHelpers.FromJsonArray<LeaderboardScore>(Json);
 
-		LeaderboardData._leaderboard = scores.ToList();
+		LeaderboardData.Leaderboard = scores.ToList();
 		
 		callback?.Invoke();
 		yield break;

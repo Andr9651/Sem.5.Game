@@ -29,7 +29,7 @@ public class APILeaderboardSource : LeaderboardSourceBase
 			LeaderboardScore[] scores = JsonUtilityHelpers.FromJsonArray<LeaderboardScore>(json);
 			
 			LeaderboardData ??= CreateInstance<LeaderboardData>();
-			LeaderboardData._leaderboard = scores.ToList();
+			LeaderboardData.Leaderboard = scores.ToList();
 		}
 
 		callback?.Invoke();
