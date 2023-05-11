@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dfb9d6b4ff4cf2af356cf51254ac6d, type: 3}
   m_Name: API Leaderboard Source
   m_EditorClassIdentifier: 
+  Leaderboard:
+  - Time: 23.32
+    PlayerName: 5yr
+    TrackName: ef5t
+  - Time: 3230
+    PlayerName: fef
+    TrackName: sefesf
   _playerTrackTime: {fileID: 0}
-  <LeaderboardData>k__BackingField: {fileID: 11400000, guid: 83911b03b32c15240a72ec3a831926e6, type: 2}
-  _leaderboardUri: 
+  _leaderboardUri: https://localhost:44381/highscores

@@ -324,7 +324,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1683074230833983706, guid: 75f401d1b1faf9e489d3aedc90c3dfce, type: 3}
       propertyPath: m_Name
-      value: Track Finish Panel
+      value: Track Finish
       objectReference: {fileID: 0}
     - target: {fileID: 6286830320167543392, guid: 75f401d1b1faf9e489d3aedc90c3dfce, type: 3}
       propertyPath: m_Pivot.x
@@ -542,12 +542,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2110269735921095629, guid: 6f29e822eb161fa439c41b52f8cbdec2, type: 3}
       propertyPath: m_Name
-      value: Leaderboard Panel
+      value: Leaderboard
       objectReference: {fileID: 0}
-    - target: {fileID: 3435154156076630646, guid: 6f29e822eb161fa439c41b52f8cbdec2, type: 3}
-      propertyPath: _leaderboardSource
-      value: 
-      objectReference: {fileID: 11400000, guid: b9b43bc29ac31c247863bfdec773f482, type: 2}
     - target: {fileID: 5789819311030835805, guid: 6f29e822eb161fa439c41b52f8cbdec2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

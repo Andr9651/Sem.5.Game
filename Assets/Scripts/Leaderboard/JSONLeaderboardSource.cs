@@ -12,17 +12,14 @@ public class JsonLeaderboardSource : LeaderboardSourceBase
 	public string Json;
 	public override IEnumerator GetLeaderboard(Action callback)
 	{
-		
-		LeaderboardData ??= CreateInstance<LeaderboardData>();
 		LeaderboardScore[] scores = JsonUtilityHelpers.FromJsonArray<LeaderboardScore>(Json);
-
-		LeaderboardData.Leaderboard = scores.ToList();
+		Leaderboard = scores.ToList();
 		
 		callback?.Invoke();
 		yield break;
 	}
 
-	public override IEnumerator PostHighscore(Action callback)
+	public override IEnumerator PostHighScore(Action callback)
 	{
 		throw new NotImplementedException();
 	}

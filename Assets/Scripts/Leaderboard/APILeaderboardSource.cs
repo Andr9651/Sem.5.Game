@@ -27,15 +27,13 @@ public class APILeaderboardSource : LeaderboardSourceBase
 
 			string json = request.downloadHandler.text;
 			LeaderboardScore[] scores = JsonUtilityHelpers.FromJsonArray<LeaderboardScore>(json);
-			
-			LeaderboardData ??= CreateInstance<LeaderboardData>();
-			LeaderboardData.Leaderboard = scores.ToList();
+			Leaderboard = scores.ToList();
 		}
 
 		callback?.Invoke();
 	}
 
-	public override IEnumerator PostHighscore(Action callback)
+	public override IEnumerator PostHighScore(Action callback)
 	{
 		string json = JsonUtility.ToJson(_playerTrackTime);
 		using (UnityWebRequest request = UnityWebRequest.Post(_leaderboardUri, json, "application/json"))

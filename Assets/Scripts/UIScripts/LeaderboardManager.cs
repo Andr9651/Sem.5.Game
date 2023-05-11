@@ -25,11 +25,11 @@ public class LeaderboardManager : MonoBehaviour
 			Destroy(child.GameObject());
 		}
 		
-		for (int i = 0; i < _leaderboardSource.LeaderboardData.Leaderboard.Count; i++)
+		for (int i = 0; i < _leaderboardSource.Leaderboard.Count; i++)
 		{
-			LeaderboardScore score = _leaderboardSource.LeaderboardData.Leaderboard[i];
-			LeaderboardElement element = Instantiate(_scoreListElement, _scoreListContainer.transform);
+			LeaderboardScore score = _leaderboardSource.Leaderboard[i];
 			
+			LeaderboardElement element = Instantiate(_scoreListElement, _scoreListContainer.transform);
 			element.SetText(i+1, score.PlayerName, score.Time);
 
 			RectTransform rectTransform = element.GetComponent<RectTransform>();
