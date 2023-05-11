@@ -65,8 +65,8 @@ public class TrackManager : MonoBehaviour
         _triggeredCheckpoints.Clear();
 
         if (_playerLapCount < _trackData.LapCount) return;
-        OnTrackFinish.Invoke();
         StopTimer();
+        OnTrackFinish.Invoke();
     }
 
     private void StartTimer()
