@@ -782,9 +782,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerLapCount: 0
   _playerTrackTime: {fileID: 11400000, guid: ee1e235a142da7c46815d812fcfc4453, type: 2}
+  _trackName: {fileID: 11400000, guid: 8c9aeaf9fe36d0c03876fc4778ce7961, type: 2}
   _trackData: {fileID: 11400000, guid: f92afd49fc301114fb23192078d3a6a8, type: 2}
-  _checkpoint:
-    rid: -2
   OnTrackFinish:
     m_PersistentCalls:
       m_Calls:
@@ -800,11 +799,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!4 &1541221330
 Transform:
   m_ObjectHideFlags: 0
