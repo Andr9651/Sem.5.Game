@@ -9,9 +9,9 @@ public class LevelManager : ScriptableObject
 {
 	public List<SceneReference> Tracks;
 
-	public SceneReference MainMenu;
-	public SceneReference UI;
-
+	[SerializeField] private SceneReference MainMenu;
+	[SerializeField] private SceneReference UI;
+	
 	public void ReloadScene()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -23,4 +23,9 @@ public class LevelManager : ScriptableObject
 		MainMenu.LoadScene(LoadSceneMode.Single);
 	}
 
+	public void LoadScene(int sceneNumber)
+	{
+		Tracks[sceneNumber].LoadScene();
+		UI.LoadScene(LoadSceneMode.Additive);
+	}
 }
