@@ -24,7 +24,7 @@ MonoBehaviour:
   MainMenu:
     Scene: {fileID: 0}
     SceneName: 
-    sceneIndex: 1
+    sceneIndex: -1
     sceneEnabled: 1
   UI:
     Scene: {fileID: 102900000, guid: 4542573b59aada94b9d8f06f14db10f2, type: 3}
