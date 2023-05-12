@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5789819311030835805}
   - component: {fileID: 3435154156076630646}
   - component: {fileID: 8961653341591462499}
-  - component: {fileID: 7873801192325302669}
   m_Layer: 5
   m_Name: Leaderboard
   m_TagString: Untagged
@@ -55,6 +54,8 @@ MonoBehaviour:
   _leaderboardSource: {fileID: 11400000, guid: 33a392a4d7472004bb88285b714636fd, type: 2}
   _scoreListContainer: {fileID: 4549469323154465446}
   _scoreListElement: {fileID: 6211914336359336552, guid: 719069d216aa4cd449a342884116e1d0, type: 3}
+  _trackNameText: {fileID: 5841449970084883541}
+  _trackName: {fileID: 11400000, guid: 8c9aeaf9fe36d0c03876fc4778ce7961, type: 2}
 --- !u!114 &8961653341591462499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,22 +84,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &7873801192325302669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110269735921095629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4fe709055f46bd4382dfeb4fcd72d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: e5fe25a9e11a4cf4689e9e187a6f2f79, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 3435154156076630646}
         m_TargetAssemblyTypeName: LeaderboardManager, Assembly-CSharp
         m_MethodName: UpdateLeaderboard
@@ -109,7 +94,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &2600980625859243170
 GameObject:
