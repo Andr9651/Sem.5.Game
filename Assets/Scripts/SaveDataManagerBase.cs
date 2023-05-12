@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SaveDataManagerBase: ScriptableObject
 {
-    public PlayerTrackTime playerTrackTime;
+    public FloatVariable playerTrackTime;
     [Button]
     public bool SavePlayerTrackData()
     {

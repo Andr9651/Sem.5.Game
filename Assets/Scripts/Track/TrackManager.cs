@@ -6,10 +6,10 @@ public class TrackManager : MonoBehaviour
 {
     private List<ICheckpoint> _checkpoints;
     [SerializeField] private int _playerLapCount;
-    [SerializeField] private PlayerTrackTime _playerTrackTime;
+    [SerializeField] private FloatVariable _playerTrackTime;
+    [SerializeField] private StringVariable _trackName;
     [SerializeField] private TrackData _trackData;
-    [SerializeReference] [SerializeField] private ICheckpoint _checkpoint;
-    [SerializeField]private UnityEvent OnTrackFinish;
+    [SerializeField] private UnityEvent OnTrackFinish;
 
     private HashSet<int> _triggeredCheckpoints;
     private float _startTime;
@@ -39,7 +39,7 @@ public class TrackManager : MonoBehaviour
         start.SetId(0);
         start.OnTriggerCheckpoint += OnTriggerStartHandler;
 
-        _playerTrackTime.TrackName = _trackData.Name;
+        _trackName.Text = _trackData.Name;
 
         _checkpoints.Add(start);
     }
@@ -80,7 +80,7 @@ public class TrackManager : MonoBehaviour
 
         float raceTime = _endTime - _startTime;
 
-        _playerTrackTime.Time = raceTime;
+        _playerTrackTime.Value = raceTime;
         print(raceTime);
     }
 }

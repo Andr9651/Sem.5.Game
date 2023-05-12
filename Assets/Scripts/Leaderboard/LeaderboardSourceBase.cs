@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class LeaderboardSourceBase : ScriptableObject
 {
 	public List<LeaderboardScore> Leaderboard;
-	[SerializeField] protected PlayerTrackTime _playerTrackTime;
+	[SerializeField] protected FloatVariable _playerTrackTime;
 	public abstract IEnumerator GetLeaderboard(Action callback);
 	public abstract IEnumerator PostHighScore(Action callback);
 }
