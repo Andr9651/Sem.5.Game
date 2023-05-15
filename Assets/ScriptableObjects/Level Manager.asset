@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Tracks>k__BackingField:
   - {fileID: 11400000, guid: f92afd49fc301114fb23192078d3a6a8, type: 2}
-  - {fileID: 11400000, guid: f92afd49fc301114fb23192078d3a6a8, type: 2}
-  - {fileID: 11400000, guid: f92afd49fc301114fb23192078d3a6a8, type: 2}
-  - {fileID: 11400000, guid: f92afd49fc301114fb23192078d3a6a8, type: 2}
   MainMenu:
-    Scene: {fileID: 0}
-    SceneName: 
+    Scene: {fileID: 102900000, guid: eb28e2ab6069229458684979aee1e4f1, type: 3}
+    SceneName: Main Menu
     sceneIndex: 0
     sceneEnabled: 1
   UI:

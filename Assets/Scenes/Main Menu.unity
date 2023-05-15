@@ -1871,6 +1871,8 @@ MonoBehaviour:
   _levelManager: {fileID: 11400000, guid: da7395762601c184cbc37b375a40f7fe, type: 2}
   _levelSelectElementPrefab: {fileID: 5480654873224248058, guid: dd25ff9edec293b4db036f48eeeae8a8, type: 3}
   _levelSelectContainer: {fileID: 1400679005}
+  _playerNameInputField: {fileID: 1880295266}
+  _playerNameVariable: {fileID: 11400000, guid: 22e5f172fce33c4648f3808b0e950005, type: 2}
 --- !u!1 &1745180125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1745180128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: da7395762601c184cbc37b375a40f7fe, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1745180128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,7 +2331,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 22e5f172fce33c4648f3808b0e950005, type: 2}
+        m_TargetAssemblyTypeName: StringVariable, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "wpefpesf\xE5"
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
