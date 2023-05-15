@@ -244,12 +244,12 @@ namespace RoboRyanTron.SceneReference.Editor
 						break;
 					}
 				}
-				/*
-                if (sceneIndex.intValue >= 0)
-                    DisplaySceneErrorPrompt(ERROR_SCENE_DISABLED);
-                else
-                    DisplaySceneErrorPrompt(ERROR_SCENE_MISSING);
-                */
+#if UNITY_EDITOR_WIN
+				if (sceneIndex.intValue >= 0)
+					DisplaySceneErrorPrompt(ERROR_SCENE_DISABLED);
+				else
+					DisplaySceneErrorPrompt(ERROR_SCENE_MISSING);
+#endif
 			}
 			else
 			{
