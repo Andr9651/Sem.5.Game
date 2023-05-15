@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b98c3c15c694787a7dfd90825f0ca28, type: 3}
+  m_Name: Track 2
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Long and Winding
+  <LapCount>k__BackingField: 0
+  <AuthorTime>k__BackingField: 20
+  <Scene>k__BackingField:
+    Scene: {fileID: 102900000, guid: 7e15780410e4c8e1a927d504d6cd8493, type: 3}
+    SceneName: Track 2
+    sceneIndex: 3
+    sceneEnabled: 1

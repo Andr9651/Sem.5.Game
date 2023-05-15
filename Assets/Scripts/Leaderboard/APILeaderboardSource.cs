@@ -48,7 +48,17 @@ public class APILeaderboardSource : LeaderboardSourceBase
 	{
 		string completeUri = GetCompleteUri();
 
-		string json = JsonUtility.ToJson(_playerTrackTime);
+		LeaderboardScore newScore = new LeaderboardScore()
+		{
+			PlayerName = _playerName.Text,
+			Time = _playerTrackTime.Value
+		};
+
+		var s = new Exception();
+		Debug.LogException(s);
+
+		string json = JsonUtility.ToJson(newScore);
+		
 		using (UnityWebRequest request = UnityWebRequest.Post(completeUri, json, "application/json"))
 		{
 			yield return request.SendWebRequest();

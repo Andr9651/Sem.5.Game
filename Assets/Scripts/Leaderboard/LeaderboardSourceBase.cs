@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class LeaderboardSourceBase : ScriptableObject
 {
 	public List<LeaderboardScore> Leaderboard;
+	[SerializeField] protected StringVariable _playerName;
 	[SerializeField] protected FloatVariable _playerTrackTime;
 	[SerializeField] protected StringVariable _trackName;
 

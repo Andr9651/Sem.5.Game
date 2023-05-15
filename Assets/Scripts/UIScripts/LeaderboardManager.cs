@@ -7,19 +7,28 @@ using UnityEngine.Serialization;
 
 public class LeaderboardManager : MonoBehaviour
 {
+	[Header("Leaderboard source reference")]
 	[SerializeField] private LeaderboardSourceBase _leaderboardSource;
-	[SerializeField] private GameObject _scoreListContainer;
+	
+	[Header("Global Variables")]
+	[SerializeField] private StringVariable _trackName;
 
+	[Header("Leaderboard UI References")]
 	// Prefab for the leaderboard element
 	[SerializeField] private LeaderboardElement _scoreListElement;
-
+	[SerializeField] private GameObject _scoreListContainer;
 	[SerializeField] private TMP_Text _trackNameText;
 	
-	[SerializeField] private StringVariable _trackName;
+	
 	
 	public void UpdateLeaderboard()
 	{
 		StartCoroutine(_leaderboardSource.GetLeaderboard(FillLeaderboard));
+	}
+
+	public void UploadScore()
+	{
+		StartCoroutine(_leaderboardSource.PostHighScore(UpdateLeaderboard));
 	}
 	
 	private void FillLeaderboard()
