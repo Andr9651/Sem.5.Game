@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class LevelManager : ScriptableObject
 {
-	public List<SceneReference> Tracks;
+	[field: SerializeField] public List<TrackData> Tracks { get; private set; }
 
 	[SerializeField] private SceneReference MainMenu;
 	[SerializeField] private SceneReference UI;
@@ -25,7 +25,7 @@ public class LevelManager : ScriptableObject
 
 	public void LoadScene(int sceneNumber)
 	{
-		Tracks[sceneNumber].LoadScene();
+		Tracks[sceneNumber].Scene.LoadScene();
 		UI.LoadScene(LoadSceneMode.Additive);
 	}
 }
