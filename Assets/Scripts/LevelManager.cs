@@ -35,4 +35,9 @@ public class LevelManager : ScriptableObject
 		UI.LoadScene(LoadSceneMode.Additive);
 		
 	}
+
+	public void Quit()
+	{
+		Application.Quit();
+	}
 }
