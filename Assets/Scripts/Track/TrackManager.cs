@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class TrackManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TrackManager : MonoBehaviour
     [SerializeField] private FloatVariable _playerTrackTime;
     [SerializeField] private StringVariable _trackName;
     [SerializeField] private TrackData _trackData;
-    [SerializeField] private UnityEvent OnTrackFinish;
+    [SerializeField] private UnityEvent _onTrackFinish;
 
     private HashSet<int> _triggeredCheckpoints;
     private float _startTime;
@@ -17,6 +18,13 @@ public class TrackManager : MonoBehaviour
     
     // Start is called before the first frame update
     private void Start()
+    {
+        _trackName.Text = _trackData.Name;
+        
+        FindCheckpoints();
+    }
+
+    private void FindCheckpoints()
     {
         _checkpoints = new List<ICheckpoint>(FindObjectsOfType<Checkpoint>());
         _triggeredCheckpoints = new HashSet<int>();
@@ -38,8 +46,6 @@ public class TrackManager : MonoBehaviour
 
         start.SetId(0);
         start.OnTriggerCheckpoint += OnTriggerStartHandler;
-
-        _trackName.Text = _trackData.Name;
 
         _checkpoints.Add(start);
     }
@@ -66,7 +72,7 @@ public class TrackManager : MonoBehaviour
 
         if (_playerLapCount < _trackData.LapCount) return;
         StopTimer();
-        OnTrackFinish.Invoke();
+        _onTrackFinish.Invoke();
     }
 
     private void StartTimer()

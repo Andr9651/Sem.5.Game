@@ -28,4 +28,11 @@ public class LevelManager : ScriptableObject
 		Tracks[sceneNumber].Scene.LoadScene();
 		UI.LoadScene(LoadSceneMode.Additive);
 	}
+
+	public void LoadTrack(TrackData trackData)
+	{
+		trackData.Scene.LoadScene();
+		UI.LoadScene(LoadSceneMode.Additive);
+		
+	}
 }

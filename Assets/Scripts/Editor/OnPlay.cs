@@ -19,8 +19,8 @@ namespace Editor
 				string currentSceneName = SceneManager.GetActiveScene().name;
 				if (currentSceneName.Contains("Track"))
 				{
-					// Loads the scene with index 0 as seen in "File/Build Settings..."
-					SceneManager.LoadScene(0, LoadSceneMode.Additive);
+					// Loads the scene with index 1 as seen in "File/Build Settings..."
+					SceneManager.LoadScene(1, LoadSceneMode.Additive);
 				}
 			}
 			

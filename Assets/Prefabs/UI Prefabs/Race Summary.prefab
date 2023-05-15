@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: e5fe25a9e11a4cf4689e9e187a6f2f79, type: 2}
+  _printDebugMessage: 0
+  _debugMessage: 
   Response:
     m_PersistentCalls:
       m_Calls:
