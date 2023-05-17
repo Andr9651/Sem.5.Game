@@ -9,7 +9,8 @@ public abstract class LeaderboardSourceBase : ScriptableObject
 	[SerializeField] protected StringVariable _playerName;
 	[SerializeField] protected FloatVariable _playerTrackTime;
 	[SerializeField] protected StringVariable _trackName;
-
+	[SerializeField] protected BoolVariable _isDuplicatePost;
+	
 	public abstract IEnumerator GetLeaderboard(Action callback);
 	public abstract IEnumerator PostHighScore(Action callback);
 }

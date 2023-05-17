@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
 	private void FillPlayerNameInputField()
 	{
-		_playerNameInputField.text = _playerNameVariable.Text;
+		_playerNameInputField.text = _playerNameVariable.Value;
 	}
 
 	private void FillLevelSelector()

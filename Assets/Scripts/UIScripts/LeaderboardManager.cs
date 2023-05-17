@@ -38,7 +38,7 @@ public class LeaderboardManager : MonoBehaviour
 			Destroy(child.GameObject());
 		}
 		
-		_trackNameText.SetText("Trackname: " + _trackName.Text);
+		_trackNameText.SetText("Trackname: " + _trackName.Value);
 		
 		for (int i = 0; i < _leaderboardSource.Leaderboard.Count; i++)
 		{

@@ -11,7 +11,7 @@ public class GameEventListener : MonoBehaviour
 	[SerializeField]
 	private bool _printDebugMessage;
 	
-	[EnableIf(nameof(_printDebugMessage))] 
+	[ShowIf(nameof(_printDebugMessage))] 
 	[SerializeField]
 	private string _debugMessage;
 

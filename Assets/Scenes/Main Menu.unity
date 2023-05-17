@@ -2334,7 +2334,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 22e5f172fce33c4648f3808b0e950005, type: 2}
         m_TargetAssemblyTypeName: StringVariable, Assembly-CSharp
-        m_MethodName: SetText
+        m_MethodName: SetValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

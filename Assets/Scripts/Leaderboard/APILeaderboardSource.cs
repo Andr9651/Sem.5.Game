@@ -17,7 +17,7 @@ public class APILeaderboardSource : LeaderboardSourceBase
 	private string GetCompleteUri()
 	{
 		
-		return new Uri(Path.Combine(_leaderboardUri, _trackName.Text)).AbsoluteUri;
+		return new Uri(Path.Combine(_leaderboardUri, _trackName.Value)).AbsoluteUri;
 	}
 	
 	public override IEnumerator GetLeaderboard(Action callback)
@@ -46,16 +46,20 @@ public class APILeaderboardSource : LeaderboardSourceBase
 
 	public override IEnumerator PostHighScore(Action callback)
 	{
+		// Yield break is the same as return in an IEnumerator
+		if (_isDuplicatePost.Value)
+		{
+			Debug.LogError("Highscore has already been posted");
+			yield break;
+		}
+		
 		string completeUri = GetCompleteUri();
 
 		LeaderboardScore newScore = new LeaderboardScore()
 		{
-			PlayerName = _playerName.Text,
+			PlayerName = _playerName.Value,
 			Time = _playerTrackTime.Value
 		};
-
-		var s = new Exception();
-		Debug.LogException(s);
 
 		string json = JsonUtility.ToJson(newScore);
 		
@@ -66,9 +70,11 @@ public class APILeaderboardSource : LeaderboardSourceBase
 			if (request.result != UnityWebRequest.Result.Success)
 			{
 				Debug.LogError(request.error);
+				yield break;
 			}
 		}
 
+		_isDuplicatePost.Value = true;
 		callback?.Invoke();
 	}
 }

@@ -19,7 +19,7 @@ public class TrackManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        _trackName.Text = _trackData.Name;
+        _trackName.Value = _trackData.Name;
         
         FindCheckpoints();
     }

@@ -1,12 +1,7 @@
+using System;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class StringVariable : ScriptableObject
+[CreateAssetMenu(menuName = "Variables/String")]
+public class StringVariable : ScriptableObjectVariable<string>
 {
-	public string Text;
-
-	public void SetText(string newText)
-	{
-		Text = newText;
-	}
 }
