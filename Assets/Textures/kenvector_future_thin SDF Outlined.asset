@@ -70,7 +70,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.25
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
@@ -166,11 +166,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: kenvector_future_thin SDF
+  m_Name: kenvector_future_thin SDF Outlined
   m_EditorClassIdentifier: 
-  hashCode: 675759958
+  hashCode: -771631438
   material: {fileID: -2268873324152588197}
-  materialHashCode: -1605956682
+  materialHashCode: 101861714
   m_Version: 1.1.0
   m_SourceFontFileGUID: 3649c07cc632bdf48915293c1afc528d
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 3649c07cc632bdf48915293c1afc528d, type: 3}

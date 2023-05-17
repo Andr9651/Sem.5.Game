@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
+using System.Diagnostics;
 
 public class TrackManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class TrackManager : MonoBehaviour
     [SerializeField] private UnityEvent _onTrackFinish;
 
     private HashSet<int> _triggeredCheckpoints;
+    
+    [SerializeField] private Stopwatch _timer;
     private float _startTime;
     private float _endTime;
     
@@ -20,8 +23,13 @@ public class TrackManager : MonoBehaviour
     private void Start()
     {
         _trackName.Value = _trackData.Name;
-        
+        _timer = new Stopwatch();
         FindCheckpoints();
+    }
+
+    private void Update()
+    {
+        UpdatePlayerTrackTime();
     }
 
     private void FindCheckpoints()
@@ -77,16 +85,18 @@ public class TrackManager : MonoBehaviour
 
     private void StartTimer()
     {
-        _startTime = Time.time;
+        _timer.Start();
+    }
+
+    private void UpdatePlayerTrackTime()
+    {
+        float raceTime = _timer.ElapsedMilliseconds / 1000f;
+        _playerTrackTime.Value = raceTime;
     }
 
     private void StopTimer()
     {
-        _endTime = Time.time;
-
-        float raceTime = _endTime - _startTime;
-
-        _playerTrackTime.Value = raceTime;
-        print(raceTime);
+        _timer.Stop();
+        UpdatePlayerTrackTime();
     }
 }

@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93e4d00aad840e3b5dc4e760f139d0f, type: 3}
   m_Name: Duplicate Post Check
   m_EditorClassIdentifier: 
-  <Value>k__BackingField: 0
-  _dontUnload: 0
+  <Value>k__BackingField: 1
+  _dontUnload: 1
