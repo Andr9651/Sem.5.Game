@@ -7,6 +7,9 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Global variables")]
+    [SerializeField] private FloatVariable _maxSpeed;
+    [Header("GameObject references")]
     [SerializeField] private WheelCollider _leftWheelCollider;
     [SerializeField] private WheelCollider _rightWheelCollider;
     [SerializeField] private Transform _leftWheel;
@@ -40,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody.WakeUp();
         
-        _leftWheelCollider.rotationSpeed = 720 * _leftWheelInput;
-        _rightWheelCollider.rotationSpeed = 720 * _rightWheelInput;
+        _leftWheelCollider.rotationSpeed = _maxSpeed.Value * _leftWheelInput;
+        _rightWheelCollider.rotationSpeed = _maxSpeed.Value * _rightWheelInput;
     }
 
     void OnLeftWheel(InputValue inputValue)

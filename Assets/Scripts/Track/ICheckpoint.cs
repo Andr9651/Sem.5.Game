@@ -1,6 +1,10 @@
+using UnityEngine;
+
 public interface ICheckpoint
 {
     public event TriggerCheckpointHandler OnTriggerCheckpoint;
+    
+    public Transform Transform { get; }
 
     public void SetId(int id);
 }

@@ -148,7 +148,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.3
+  m_SuspensionDistance: 0.83
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -209,11 +209,11 @@ Transform:
   m_Children:
   - {fileID: 2846208018769733969}
   - {fileID: 6526692260254463344}
-  - {fileID: 4341087694675710884}
   - {fileID: 6907447800293197252}
+  - {fileID: 4341087694675710884}
   - {fileID: 4560249041552955117}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4722054202671782660
 MonoBehaviour:
@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd24dbfd9644df85cafe30834989e2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxSpeed: {fileID: 11400000, guid: 46965d1a406546247bf000a927596f78, type: 2}
   _leftWheelCollider: {fileID: 6382901392262317243}
   _rightWheelCollider: {fileID: 6643370968137572744}
   _leftWheel: {fileID: 4341087694675710884}
@@ -405,7 +406,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.3
+  m_SuspensionDistance: 0.83
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25

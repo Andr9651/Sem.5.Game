@@ -6,97 +6,126 @@ using System.Diagnostics;
 
 public class TrackManager : MonoBehaviour
 {
-    private List<ICheckpoint> _checkpoints;
-    [SerializeField] private int _playerLapCount;
-    [SerializeField] private FloatVariable _playerTrackTime;
-    [SerializeField] private StringVariable _trackName;
-    [SerializeField] private TrackData _trackData;
-    [SerializeField] private UnityEvent _onTrackFinish;
+	[Header("Global Variables")] [SerializeField]
+	private FloatVariable _playerTrackTime;
 
-    private HashSet<int> _triggeredCheckpoints;
-    
-    [SerializeField] private Stopwatch _timer;
-    private float _startTime;
-    private float _endTime;
-    
-    // Start is called before the first frame update
-    private void Start()
-    {
-        _trackName.Value = _trackData.Name;
-        _timer = new Stopwatch();
-        FindCheckpoints();
-    }
+	[SerializeField] private StringVariable _trackName;
+	[SerializeField] private TrackData _trackData;
 
-    private void Update()
-    {
-        UpdatePlayerTrackTime();
-    }
+	[Header("GameObject References")] [SerializeField]
+	private Rigidbody _player;
 
-    private void FindCheckpoints()
-    {
-        _checkpoints = new List<ICheckpoint>(FindObjectsOfType<Checkpoint>());
-        _triggeredCheckpoints = new HashSet<int>();
+	[Header("Events")] [SerializeField] private UnityEvent _onTrackFinish;
 
-        for (int i = 0; i < _checkpoints.Count; i++)
-        {
-            _checkpoints[i].SetId(i + 1);
-            _checkpoints[i].OnTriggerCheckpoint += OnTriggerCheckpointHandler;
-        }
+	private int _playerLapCount;
+	private List<ICheckpoint> _checkpoints;
+	private HashSet<int> _triggeredCheckpoints;
+	private ICheckpoint _lastTriggeredCheckpoint;
 
-        Goal goal = FindObjectOfType<Goal>();
+	private Stopwatch _timer;
+	private float _startTime;
+	private float _endTime;
 
-        goal.SetId(_checkpoints.Count + 1);
-        goal.OnTriggerCheckpoint += OnTriggerGoalHandler;
+	// Start is called before the first frame update
+	private void Start()
+	{
+		_trackName.Value = _trackData.Name;
+		_timer = new Stopwatch();
+		FindCheckpoints();
+	}
 
-        _checkpoints.Add(goal);
+	private void Update()
+	{
+		UpdatePlayerTrackTime();
+	}
 
-        Start start = FindObjectOfType<Start>();
+	private void FindCheckpoints()
+	{
+		_triggeredCheckpoints = new HashSet<int>();
 
-        start.SetId(0);
-        start.OnTriggerCheckpoint += OnTriggerStartHandler;
+		_checkpoints = new List<ICheckpoint>(FindObjectsOfType<CheckpointBase>());
 
-        _checkpoints.Add(start);
-    }
+		for (int i = 0; i < _checkpoints.Count; i++)
+		{
+			ICheckpoint checkpoint = _checkpoints[i];
 
-    private void OnTriggerCheckpointHandler(int id)
-    {
-        _triggeredCheckpoints.Add(id);
-    }
+			_checkpoints[i].SetId(i);
 
-    private void OnTriggerStartHandler(int id)
-    {
-        if (!_triggeredCheckpoints.Add(id) || _playerLapCount != 0) return;
-        StartTimer();
-        print("Ok, let's go!");
-    }
+			switch (checkpoint)
+			{
+				case StartCheckpoint:
+					checkpoint.OnTriggerCheckpoint += OnTriggerStartHandler;
+					_lastTriggeredCheckpoint = checkpoint;
+					break;
 
-    private void OnTriggerGoalHandler(int id)
-    {
-        _triggeredCheckpoints.Add(id);
+				case GoalCheckpoint:
+					checkpoint.OnTriggerCheckpoint += OnTriggerGoalHandler;
+					break;
 
-        if (_triggeredCheckpoints.Count != _checkpoints.Count) return;
-        _playerLapCount++;
-        _triggeredCheckpoints.Clear();
+				default:
+					checkpoint.OnTriggerCheckpoint += OnTriggerCheckpointHandler;
+					break;
+			}
+		}
+	}
 
-        if (_playerLapCount < _trackData.LapCount) return;
-        StopTimer();
-        _onTrackFinish.Invoke();
-    }
+	private void OnTriggerCheckpointHandler(int id)
+	{
+		// return if the checkpoint is already triggered
+		if (!_triggeredCheckpoints.Add(id)) return;
+		_lastTriggeredCheckpoint = _checkpoints[id];
+		print(id);
+	}
 
-    private void StartTimer()
-    {
-        _timer.Start();
-    }
+	private void OnTriggerStartHandler(int id)
+	{
+		// return if the checkpoint is already triggered
+		if (!_triggeredCheckpoints.Add(id)) return;
+		_lastTriggeredCheckpoint = _checkpoints[id];
+		print(id);
 
-    private void UpdatePlayerTrackTime()
-    {
-        float raceTime = _timer.ElapsedMilliseconds / 1000f;
-        _playerTrackTime.Value = raceTime;
-    }
+		// Return if the lap count is above 0
+		// as the timer should only be started on the first lap
+		if (_playerLapCount > 0) return;
+		StartTimer();
+		print("Ok, let's go!");
+	}
 
-    private void StopTimer()
-    {
-        _timer.Stop();
-        UpdatePlayerTrackTime();
-    }
+	private void OnTriggerGoalHandler(int id)
+	{
+		_triggeredCheckpoints.Add(id);
+
+		if (_triggeredCheckpoints.Count != _checkpoints.Count) return;
+		_playerLapCount++;
+		_triggeredCheckpoints.Clear();
+
+		if (_playerLapCount < _trackData.LapCount) return;
+		StopTimer();
+		_onTrackFinish.Invoke();
+	}
+
+	private void StartTimer()
+	{
+		_timer.Start();
+	}
+
+	private void UpdatePlayerTrackTime()
+	{
+		float raceTime = _timer.ElapsedMilliseconds / 1000f;
+		_playerTrackTime.Value = raceTime;
+	}
+
+	private void StopTimer()
+	{
+		_timer.Stop();
+		UpdatePlayerTrackTime();
+	}
+
+	public void SetPlayerPositionToLastCheckpoint()
+	{
+		_player.transform.SetPositionAndRotation(_lastTriggeredCheckpoint.Transform.position,
+			_lastTriggeredCheckpoint.Transform.rotation);
+		_player.velocity = Vector3.zero;
+		_player.angularVelocity = Vector3.zero;
+	}
 }
