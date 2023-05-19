@@ -1951,6 +1951,8 @@ GameObject:
   - component: {fileID: 1541221330}
   - component: {fileID: 1541221329}
   - component: {fileID: 1541221331}
+  - component: {fileID: 1541221333}
+  - component: {fileID: 1541221332}
   m_Layer: 0
   m_Name: Track Manager
   m_TagString: Untagged
@@ -2032,6 +2034,66 @@ MonoBehaviour:
       - m_Target: {fileID: 1541221329}
         m_TargetAssemblyTypeName: TrackManager, Assembly-CSharp
         m_MethodName: SetPlayerPositionToLastCheckpoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1541221332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541221328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4fe709055f46bd4382dfeb4fcd72d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 30cbd7286b06a1b48b893be1cbc19780, type: 2}
+  _printDebugMessage: 0
+  _debugMessage: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1541221329}
+        m_TargetAssemblyTypeName: TrackManager, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1541221333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541221328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4fe709055f46bd4382dfeb4fcd72d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ab0a987d8f5dff949861f3d2d362d44a, type: 2}
+  _printDebugMessage: 0
+  _debugMessage: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1541221329}
+        m_TargetAssemblyTypeName: TrackManager, Assembly-CSharp
+        m_MethodName: StopTimer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2674,3 +2736,64 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3a994960ae49813fcb9aae749651720d, type: 3}
+--- !u!1001 &6020518896179114958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.37939462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24567235
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.53653
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085601473039853674, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207190982106999117, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
+      propertyPath: m_Name
+      value: Pause Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56572332ea39e534aaa49d2d486e78a0, type: 3}
