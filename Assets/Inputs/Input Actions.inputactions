@@ -39,7 +39,7 @@
                 {
                     "name": "",
                     "id": "0bb0539f-482f-48bf-9ff2-e872b69216ec",
-                    "path": "<Joystick>/stick/x",
+                    "path": "<HID::Raspberry Pi Pico W>/rx",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
