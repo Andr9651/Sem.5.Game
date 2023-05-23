@@ -18,11 +18,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1935712333125755510, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1935712333125755510, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1935712333125755510, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1935712333125755510, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1935712333125755510, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2151863041548833776, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
+      propertyPath: m_text
+      value: GOAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151863041548833776, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
+      propertyPath: m_fontSize
+      value: 8.85
+      objectReference: {fileID: 0}
     - target: {fileID: 3200086950792856688, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -80,13 +88,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goal Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7159332743030549574, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
+      propertyPath: m_text
+      value: GOAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159332743030549574, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
+      propertyPath: m_fontSize
+      value: 8.85
+      objectReference: {fileID: 0}
     - target: {fileID: 8809221151123024422, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ab41967af03da20b9853b28239fe2926, type: 2}
+      objectReference: {fileID: 2100000, guid: ca00cd4b6dd97d14283e017618b1847c, type: 2}
     m_RemovedComponents:
     - {fileID: 5087769270270575721, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3455432318581549641, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
+    - {fileID: 3955965330158590061, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6541939144857448465, guid: bf8329277646ab1ee9cdf13d87c168b0, type: 3}

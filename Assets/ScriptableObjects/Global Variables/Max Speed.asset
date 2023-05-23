@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158ea843b7dc4da9949b78f0d9e9db99, type: 3}
   m_Name: Max Speed
   m_EditorClassIdentifier: 
-  <Value>k__BackingField: 1000
+  <Value>k__BackingField: 700
   _dontUnload: 1

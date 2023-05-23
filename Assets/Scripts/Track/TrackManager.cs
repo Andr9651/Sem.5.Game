@@ -104,7 +104,7 @@ public class TrackManager : MonoBehaviour
 		_onTrackFinish.Invoke();
 	}
 
-	private void StartTimer()
+	public void StartTimer()
 	{
 		_timer.Start();
 	}
@@ -115,7 +115,7 @@ public class TrackManager : MonoBehaviour
 		_playerTrackTime.Value = raceTime;
 	}
 
-	private void StopTimer()
+	public void StopTimer()
 	{
 		_timer.Stop();
 		UpdatePlayerTrackTime();
