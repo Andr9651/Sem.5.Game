@@ -11,16 +11,14 @@ public class TrackManager : MonoBehaviour
 
 	[SerializeField] private StringVariable _trackName;
 	[SerializeField] private TrackData _trackData;
-
-	[Header("GameObject References")] [SerializeField]
-	private Rigidbody _player;
+	[SerializeField] private Vector3Variable _respawnPosition;
+	[SerializeField] private Vector3Variable _respawnRotation;
 
 	[Header("Events")] [SerializeField] private UnityEvent _onTrackFinish;
 
 	private int _playerLapCount;
 	private List<ICheckpoint> _checkpoints;
 	private HashSet<int> _triggeredCheckpoints;
-	private ICheckpoint _lastTriggeredCheckpoint;
 
 	private Stopwatch _timer;
 	private float _startTime;
@@ -55,7 +53,6 @@ public class TrackManager : MonoBehaviour
 			{
 				case StartCheckpoint:
 					checkpoint.OnTriggerCheckpoint += OnTriggerStartHandler;
-					_lastTriggeredCheckpoint = checkpoint;
 					break;
 
 				case GoalCheckpoint:
@@ -73,16 +70,18 @@ public class TrackManager : MonoBehaviour
 	{
 		// return if the checkpoint is already triggered
 		if (!_triggeredCheckpoints.Add(id)) return;
-		_lastTriggeredCheckpoint = _checkpoints[id];
+		
+		// Update respawn location
+		var lastTriggeredCheckpoint = _checkpoints[id];
+		_respawnPosition.SetValue(lastTriggeredCheckpoint.Transform.position);
+		_respawnRotation.SetValue(lastTriggeredCheckpoint.Transform.rotation.eulerAngles);
 		print(id);
 	}
 
 	private void OnTriggerStartHandler(int id)
 	{
-		// return if the checkpoint is already triggered
-		if (!_triggeredCheckpoints.Add(id)) return;
-		_lastTriggeredCheckpoint = _checkpoints[id];
-		print(id);
+		// The Start checkpoint should do the same as all other checkpoints 
+		OnTriggerCheckpointHandler(id);
 
 		// Return if the lap count is above 0
 		// as the timer should only be started on the first lap
@@ -119,13 +118,5 @@ public class TrackManager : MonoBehaviour
 	{
 		_timer.Stop();
 		UpdatePlayerTrackTime();
-	}
-
-	public void SetPlayerPositionToLastCheckpoint()
-	{
-		_player.transform.SetPositionAndRotation(_lastTriggeredCheckpoint.Transform.position,
-			_lastTriggeredCheckpoint.Transform.rotation);
-		_player.velocity = Vector3.zero;
-		_player.angularVelocity = Vector3.zero;
 	}
 }
