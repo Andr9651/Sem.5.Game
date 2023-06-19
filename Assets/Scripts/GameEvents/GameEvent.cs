@@ -6,8 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameEvent : ScriptableObject
 {
-    private List<GameEventListener> listeners =
-        new List<GameEventListener>();
+    private List<GameEventListener> listeners = new List<GameEventListener>();
 
     [Button(enabledMode:EButtonEnableMode.Playmode)]
     public void Raise()

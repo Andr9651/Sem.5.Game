@@ -1991,6 +1991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fall Out Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3951809187288103256, guid: 75c1e202c27b04d4b9e5e1b5328e5c51, type: 3}
+      propertyPath: _fallOutStrategy
+      value: 
+      objectReference: {fileID: 11400000, guid: 46dd292c32ccd164797a0e9d2c43532d, type: 2}
     - target: {fileID: 9156230919988304234, guid: 75c1e202c27b04d4b9e5e1b5328e5c51, type: 3}
       propertyPath: m_RootOrder
       value: 4
