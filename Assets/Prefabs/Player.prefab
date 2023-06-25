@@ -491,7 +491,7 @@ MonoBehaviour:
   _rightWheelCollider: {fileID: 6643370968137572744}
   _leftWheel: {fileID: 4341087694675710884}
   _rightWheel: {fileID: 4560249041552955117}
-  _inputProcessor: {fileID: 11400000, guid: 97a998234088dfa4ea89e784c6977dee, type: 2}
+  _inputProcessor: {fileID: 11400000, guid: d824cf8f0ddc1364eac515102f562c7c, type: 2}
 --- !u!114 &4390726987969783044
 MonoBehaviour:
   m_ObjectHideFlags: 0
