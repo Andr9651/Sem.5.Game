@@ -14,12 +14,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private WheelCollider _rightWheelCollider;
     [SerializeField] private Transform _leftWheel;
     [SerializeField] private Transform _rightWheel;
-
-    private float _leftWheelInput;
-    private float _rightWheelInput;
+    [SerializeField] private BaseInputProcessor _inputProcessor;
 
     private Rigidbody _rigidbody;
-    
+
+    private void Awake()
+    {
+        if (_inputProcessor == null)
+        {
+            _inputProcessor = ScriptableObject.CreateInstance<BaseInputProcessor>();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,17 +50,18 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody.WakeUp();
         
-        _leftWheelCollider.rotationSpeed = _maxSpeed.Value * _leftWheelInput;
-        _rightWheelCollider.rotationSpeed = _maxSpeed.Value * _rightWheelInput;
+        _leftWheelCollider.rotationSpeed = _maxSpeed.Value * _inputProcessor.LeftWheelInput;
+        _rightWheelCollider.rotationSpeed = _maxSpeed.Value * _inputProcessor.RightWheelInput;
     }
 
     void OnLeftWheel(InputValue inputValue)
     {
-        _leftWheelInput = inputValue.Get<float>();
+        _inputProcessor.LeftWheelInput = inputValue.Get<float>();
     }
 
     void OnRightWheel(InputValue inputValue)
     {
-        _rightWheelInput = inputValue.Get<float>(); 
+        _inputProcessor.RightWheelInput = inputValue.Get<float>();
+
     }
 }

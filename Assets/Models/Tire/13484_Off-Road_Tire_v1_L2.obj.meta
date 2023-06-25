@@ -3,7 +3,12 @@ guid: c61731d4b48be074c9fc07e68ffe9105
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13484_Off_road_Tire_rubber
+    second: {fileID: 2100000, guid: 349c271e94e98f64286eb6720676104f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
