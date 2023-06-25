@@ -1,9 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-    public class FalloutTrigger : MonoBehaviour
+public class FalloutTrigger : MonoBehaviour
     {
-        [SerializeField] private FallOutStrategy _fallOutStrategy;
+        [FormerlySerializedAs("fallOutStrategyBase")] [SerializeField] private FallOutStrategyBase _fallOutStrategy;
         private void OnTriggerEnter(Collider other)
         {
             StartCoroutine(_fallOutStrategy.HandleFallout(other.gameObject));

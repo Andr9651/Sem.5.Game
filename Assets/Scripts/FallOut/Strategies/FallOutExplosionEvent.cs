@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu]
-class FallOutExplosionEvent : FallOutStrategy
+class FallOutExplosionEvent : FallOutStrategyBase
 {
     public ParticleSystem Explosion;
     public float Delay = 2;

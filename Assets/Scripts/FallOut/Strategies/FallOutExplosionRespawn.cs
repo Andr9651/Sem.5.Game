@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-class FallOutExplosionRespawn : FallOutStrategy
+class FallOutExplosionRespawn : FallOutStrategyBase
 {
     public ParticleSystem Explosion;
     public Vector3Variable RespawnPosition;
