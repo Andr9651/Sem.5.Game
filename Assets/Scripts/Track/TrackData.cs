@@ -8,6 +8,4 @@ public class TrackData: ScriptableObject
     [field: SerializeField] public int LapCount { get; private set; }
     [field: SerializeField] public float AuthorTime { get; private set; }
     [field: SerializeField] public SceneReference Scene { get; private set; }
-    
-        
 }

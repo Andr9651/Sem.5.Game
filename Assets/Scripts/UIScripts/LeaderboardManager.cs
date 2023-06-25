@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class LeaderboardManager : MonoBehaviour
 {
-	[Header("Leaderboard source reference")]
-	[SerializeField] private LeaderboardSourceBase _leaderboardSource;
+	[FormerlySerializedAs("_leaderboardSource")] [Header("Leaderboard source reference")]
+	public LeaderboardSourceBase leaderboardSource;
 	
 	[Header("Global Variables")]
 	[SerializeField] private StringVariable _trackName;
@@ -23,26 +21,26 @@ public class LeaderboardManager : MonoBehaviour
 	
 	public void UpdateLeaderboard()
 	{
-		StartCoroutine(_leaderboardSource.GetLeaderboard(FillLeaderboard));
+		StartCoroutine(leaderboardSource.GetLeaderboard(FillLeaderboard));
 	}
 
 	public void UploadScore()
 	{
-		StartCoroutine(_leaderboardSource.PostHighScore(UpdateLeaderboard));
+		StartCoroutine(leaderboardSource.PostHighScore(UpdateLeaderboard));
 	}
 	
 	private void FillLeaderboard()
 	{
 		foreach (Transform child in _scoreListContainer.transform)
 		{
-			Destroy(child.GameObject());
+			Destroy(child.gameObject);
 		}
 		
 		_trackNameText.SetText("Trackname: " + _trackName.Value);
 		
-		for (int i = 0; i < _leaderboardSource.Leaderboard.Count; i++)
+		for (int i = 0; i < leaderboardSource.Leaderboard.Count; i++)
 		{
-			LeaderboardScore score = _leaderboardSource.Leaderboard[i];
+			LeaderboardScore score = leaderboardSource.Leaderboard[i];
 			
 			LeaderboardElement element = Instantiate(_scoreListElement, _scoreListContainer.transform);
 			element.SetText(i+1, score.PlayerName, score.Time);

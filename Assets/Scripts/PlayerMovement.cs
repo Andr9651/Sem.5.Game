@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         _rightWheel.SetPositionAndRotation(pos,rotation);
     }
 
+    // Fixed update is called once every physics update (50 times per second)
     private void FixedUpdate()
     {
         _rigidbody.WakeUp();
